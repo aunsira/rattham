@@ -14,14 +14,14 @@ module Api
       end
 
       api :GET, '/v1/tasks/:id', 'View a single task in the list'
-      param :id, Fixnum, :desc => "Task Id", :required => true
+      param :id, String, :desc => "Task Id", :required => true
       def show
         @task = Task.find(params[:id])
         render json: {task: @task}
       end
 
       api :POST, '/v1/tasks/:id', 'Edit existing task'
-      param :id, Fixnum, :desc => "Task Id", :required => true
+      param :id, String, :desc => "Task Id", :required => true
       param_group :task
       def update
         @task = Task.find(params[:id])
@@ -47,8 +47,8 @@ module Api
         end
       end
 
-      api :PATCH, '/v1/tasks/:id', 'Set task status'
-      param :id, Fixnum, :desc => "Task Id", :required => true
+      api :PATCH, '/v1/tasks/:id/update_status/', 'Set task status'
+      param :id, String, :desc => "Task Id", :required => true
       param :status, String, :desc => "Task's status", :required => true
       def set_status
         @task = Task.find(params[:id])
@@ -62,7 +62,7 @@ module Api
       end
 
       api :DELETE, '/v1/tasks/:id', 'Delete a specific task'
-      param :id, Fixnum, :desc => "Task Id", :required => true
+      param :id, String, :desc => "Task Id", :required => true
       def destroy
         @task = Task.find(params[:id])
         @task.destroy
