@@ -1,28 +1,17 @@
-== README
+Rattham
+=======
+Rattham is a example ruby project that provides RESTful API of 'todo' task list
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+### Running locally:
+```bash
+bundle install
+rake db:setup
+rake db:migrate
+rails server
+```
+** Note that to run locally require Postgresql. **
 
-Things you may want to cover:
+Run application and see available service at http://localhost:3000/apipie
 
-* Ruby version
+If you don't want to run locally, try this site https://rattham.herokuapp.com/apipie
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
-
-
-Please feel free to use a different markup language if you do not plan to run
-<tt>rake doc:app</tt>.
