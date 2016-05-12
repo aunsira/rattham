@@ -28,7 +28,7 @@ module Api
         if @task.update(task_params)
           render json: {task: @task}
         else
-          render json: {message: 'something wrong'}
+          render json: {message: @task.errors.full_messages}
         end
       end
 
@@ -43,7 +43,7 @@ module Api
         if @task.save
           render json: {task: @task}
         else
-          render json: {message: 'something wrong'}
+          render json: {message: @task.errors.full_messages}
         end
       end
 
