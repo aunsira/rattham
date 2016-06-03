@@ -19,6 +19,7 @@ group :development, :test do
   gem "jasmine", git: "https://github.com/pivotal/jasmine-gem.git"
   gem "pry"
   gem "rspec-rails"
+  gem 'database_cleaner'
 end
 
 group :development do
