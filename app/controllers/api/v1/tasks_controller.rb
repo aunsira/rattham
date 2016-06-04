@@ -20,7 +20,7 @@ module Api
         render json: {task: @task}
       end
 
-      api :POST, '/v1/tasks/:id', 'Edit existing task'
+      api :PUT, '/v1/tasks/:id', 'Edit existing task'
       param :id, String, :desc => "Task Id", :required => true
       param_group :task
       def update
